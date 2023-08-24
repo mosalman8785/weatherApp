@@ -146,7 +146,7 @@ function showData(DataSended){
           <div class="weather-content d-flex justify-content-between mt-2 align-items-center flex-column gap-3">
             <img src="https:${DataSended.forecast.forecastday[1].day.condition.icon}" class="weather-condition " alt=" weather condition">
             <div class="conta4 d-flex justify-content-around mt-4  align-items-center flex-column">
-                <p class="weather-degree2 text-white">${DataSended.forecast.forecastday[1].day.avgtemp_c}</p>
+                <p class="weather-degree2 text-white">${DataSended.forecast.forecastday[1].day.avgtemp_c}°C</p>
                 <p class="gray-color ">35.1°</p>
             </div>
             <p class="text-info text-center">${DataSended.forecast.forecastday[1].day.condition.text}</p>
@@ -170,10 +170,10 @@ function showData(DataSended){
       <div class="weather-content d-flex justify-content-between mt-2 align-items-center flex-column gap-3">
         <img src="https:${DataSended.forecast.forecastday[2].day.condition.icon}" class="weather-condition " alt=" weather condition">
         <div class="conta4 d-flex justify-content-around mt-4  align-items-center flex-column">
-            <p class="weather-degree2 text-white">${DataSended.forecast.forecastday[2].day.avgtemp_c}</p>
+            <p class="weather-degree2 text-white">${DataSended.forecast.forecastday[2].day.avgtemp_c}°C</p>
             <p class="gray-color ">35.1°</p>
         </div>
-        <p class="text-info text-center">${DataSended.forecast.forecastday[2].day.avgtemp_c}</p>
+        <p class="text-info text-center">${DataSended.forecast.forecastday[2].day.condition.text}</p>
        
 
       </div>
