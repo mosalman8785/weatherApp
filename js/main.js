@@ -1,103 +1,103 @@
-var inputSearch=document.getElementById("WeatherSearch");
-var getdata=document.getElementById("getdata");
-var d=new Date();
-function returnDay(days){
-   f= new Date(days).getDay()
-   if(f==0){
-    return "Sunday"
-   }
-   else if(f==1){
-    return "Monday"
-   }
-   else if(f==2){
-    return "Tuesday"
-   }
-   else if(f==3){
-    return "Wednesday"
-   }
-   else if(f==4){
-    return "Thursday"
-   }
-   else if(f==5){
-    return "Friday"
-   }
-   else if(f==6){
-    return "Saturday"
-   }
+var inputSearch = document.getElementById("WeatherSearch");
+var getdata = document.getElementById("getdata");
+var d = new Date();
+function returnDay(days) {
+    f = new Date(days).getDay()
+    if (f == 0) {
+        return "Sunday"
+    }
+    else if (f == 1) {
+        return "Monday"
+    }
+    else if (f == 2) {
+        return "Tuesday"
+    }
+    else if (f == 3) {
+        return "Wednesday"
+    }
+    else if (f == 4) {
+        return "Thursday"
+    }
+    else if (f == 5) {
+        return "Friday"
+    }
+    else if (f == 6) {
+        return "Saturday"
+    }
 
 
 }
-function returnMonth(months){
-    mon= new Date(months).getMonth()
-    if(mon==0){
-     return "January "
+function returnMonth(months) {
+    mon = new Date(months).getMonth()
+    if (mon == 0) {
+        return "January "
     }
-    else if(mon==1){
-     return "February "
+    else if (mon == 1) {
+        return "February "
     }
-    else if(mon==2){
-     return "March"
+    else if (mon == 2) {
+        return "March"
     }
-    else if(mon==3){
-     return "April "
+    else if (mon == 3) {
+        return "April "
     }
-    else if(mon==4){
-     return "May"
+    else if (mon == 4) {
+        return "May"
     }
-    else if(mon==5){
-     return "June "
+    else if (mon == 5) {
+        return "June "
     }
-    else if(mon==6){
-     return "July"
+    else if (mon == 6) {
+        return "July"
     }
-    else if(mon==7){
+    else if (mon == 7) {
         return "August "
-       }
-       else if(mon==8){
+    }
+    else if (mon == 8) {
         return "September"
-       }
-       else if(mon==9){
+    }
+    else if (mon == 9) {
         return "October"
-       }
-       else if(mon==10){
+    }
+    else if (mon == 10) {
         return "November"
-       }
-       else if(mon==11){
+    }
+    else if (mon == 11) {
         return "December"
-       }
+    }
 }
 
 
-var reqWeather=[]
-async function requestWeather(gets){
-    var x= await fetch(`https://api.weatherapi.com/v1/forecast.json?key=2f6ab4a5ebeb4ab8aac153610232108&q=${gets}&days=3`)
-    reqWeather=  await x.json();
-    
- 
+var reqWeather = []
+async function requestWeather(gets) {
+    var x = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=2f6ab4a5ebeb4ab8aac153610232108&q=${gets}&days=3`)
+    reqWeather = await x.json();
 
-        return reqWeather;
-    
+
+
+    return reqWeather;
+
 }
 
 // requestWeather();
-inputSearch.addEventListener("keyup",async function(){
-//    var  DataSent=await requestWeather(this.value);
-//    console.log(DataSent);
-    if(this.value==""){
-        var  DataSent=await requestWeather("cairo");
+inputSearch.addEventListener("keyup", async function () {
+    //    var  DataSent=await requestWeather(this.value);
+    //    console.log(DataSent);
+    if (this.value == "") {
+        var DataSent = await requestWeather("cairo");
         // console.log(DataSent);
         showData(DataSent);
     }
-    else{
-        var  DataSent=await requestWeather(this.value);
-        showData(DataSent); 
-          ; 
+    else {
+        var DataSent = await requestWeather(this.value);
+        showData(DataSent);
+        ;
     }
-   
+
 })
-function showData(DataSended){
-    getdata.innerHTML=
-    `     <div class="row py-5 gx-0 gy-2">
+function showData(DataSended) {
+    getdata.innerHTML =
+        `     <div class="row py-5 gx-0 gy-2">
     <div class="col-lg-4 col-md-11">
         <div class="card card1 w-100 ">
             <div class="card-header d-flex justify-content-between align-items-center ">
