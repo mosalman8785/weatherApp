@@ -91,7 +91,7 @@ inputSearch.addEventListener("keyup",async function(){
     else{
         var  DataSent=await requestWeather(this.value);
         showData(DataSent); 
-        console.log(DataSent)  ; 
+          ; 
     }
    
 })
